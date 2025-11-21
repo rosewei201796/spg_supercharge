@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.2s ease-out;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-gray-900 via-slate-900 to-black min-h-screen text-gray-100;
+  }
+}
+
+/* Handwriting Title Style */
+.handwriting-title {
+  font-family: 'Permanent Marker', cursive;
+  color: #7FFF00;
+  text-shadow: 0 0 8px rgba(127, 255, 0, 0.6), 0 0 15px rgba(127, 255, 0, 0.4);
+  letter-spacing: 2px;
+  transform: rotate(-2deg);
+  display: inline-block;
+  animation: float 3s ease-in-out infinite, neonGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 8px rgba(127, 255, 0, 0.5), 0 0 15px rgba(127, 255, 0, 0.3);
+  }
+  to {
+    text-shadow: 0 0 10px rgba(127, 255, 0, 0.7), 0 0 20px rgba(127, 255, 0, 0.5);
+  }
+}
+
+/* Handwriting Subtitle Style */
+.handwriting-subtitle {
+  font-family: 'Permanent Marker', cursive;
+  transform: rotate(-1deg);
+  display: inline-block;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-2deg);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-green-600 text-white font-medium px-6 py-3 rounded-lg 
+           hover:bg-green-500 transition-colors duration-200
+           disabled:bg-gray-600 disabled:cursor-not-allowed shadow-lg shadow-green-500/20;
+  }
+  
+  .card {
+    @apply bg-gray-800 rounded-xl shadow-xl p-6 border border-gray-700;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-lg
+           focus:ring-2 focus:ring-green-500 focus:border-green-500
+           transition-all duration-200 placeholder-gray-400;
+  }
+}
+

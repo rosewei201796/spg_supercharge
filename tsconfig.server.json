@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "ES2020",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "noEmit": false,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/server.ts",
+    "src/api/**/*",
+    "src/systemPrompt.ts"
+  ],
+  "exclude": [
+    "src/frontend/**/*",
+    "node_modules"
+  ]
+}
+
